@@ -17,9 +17,13 @@
                      -#%module-begin)
          (rename-out [--#%module-begin #%module-begin])
 
+         newthought
          publisher
          epigraphs
          copyright-page)
+
+(define (newthought . pcs)
+  (apply elem #:style "newthought" pcs))
 
 (define (publisher . pcs)
   (para #:style 'pretitle

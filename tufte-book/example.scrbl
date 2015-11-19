@@ -40,7 +40,7 @@
 
 @section{Introduction}
 
-Lorem ipsum dolor sit@note{This is a footnote.} amet, consectetur adipiscing
+@newthought{Lorem ipsum dolor} sit@note{This is a footnote.} amet, consectetur adipiscing
 elit. Donec a diam lectus.
 Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec
 consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero
@@ -69,7 +69,7 @@ vitae nisi at sem facilisis semper ac in est.
      (apply hc-append 10 picts))
 }
 
-Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae,
+@newthought{Vivamus fermentum semper} porta. Nunc diam velit, adipiscing ut tristique vitae,
 sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare,
 ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem
 nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat,
