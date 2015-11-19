@@ -15,7 +15,7 @@
          (except-out (all-from-out scribble/doclang)
                      -#%module-begin)
          (rename-out [--#%module-begin #%module-begin])
-         
+
          publisher
          epigraph
          copyright-page)
