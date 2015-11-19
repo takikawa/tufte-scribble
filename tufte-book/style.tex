@@ -41,11 +41,11 @@ Copyright \copyright\ \the\year\ \thanklessauthor
   December\fi\space\number\year
 }
 
-% Override title commands
-%\newcommand{\titleAndVersionAndAuthors}[3]{\title{#1\\{\normalsize \SVersionBefore{}#2}}\author{#3}\maketitle}
-%\newcommand{\titleAndVersionAndEmptyAuthors}[3]{\title{#1\\{\normalsize \SVersionBefore{}#2}}#3\maketitle}
-%\newcommand{\titleAndEmptyVersionAndAuthors}[3]{\title{#1}\author{#3}\maketitle}
-%\newcommand{\titleAndEmptyVersionAndEmptyAuthors}[3]{\title{#1}\maketitle}
+% Override legend to work nicely with tufte
+\renewcommand{\Legend}[1]{\caption{#1}}
+
+% figure** is turned into marginfigure
+\renewenvironment{FigureMultiWide}{\begin{marginfigure}\FigureSetRef}{\end{marginfigure}}
 
 %% All stolen from scribble/book
 \renewcommand{\ChapRef}[2]{chapter~#1}
