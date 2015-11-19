@@ -21,7 +21,8 @@
          copyright-page)
 
 (define (publisher . pcs)
-  (apply elem pcs #:style "publisher"))
+  (para #:style 'pretitle
+        (apply elem pcs #:style "publisher")))
 
 (define (epigraph blurb author)
   (make-multiarg-element "Topenepigraph" (list blurb author)))
