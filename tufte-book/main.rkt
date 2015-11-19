@@ -2,7 +2,8 @@
 
 ;; Implements the tufte-book Scribble style
 
-(require racket/match
+(require racket/list
+         racket/match
          scribble/base
          scribble/core
          scribble/latex-properties
@@ -17,15 +18,20 @@
          (rename-out [--#%module-begin #%module-begin])
 
          publisher
-         epigraph
+         epigraphs
          copyright-page)
 
 (define (publisher . pcs)
   (para #:style 'pretitle
         (apply elem pcs #:style "publisher")))
 
-(define (epigraph blurb author)
-  (make-multiarg-element "Topenepigraph" (list blurb author)))
+(define (epigraphs epis)
+  (define epi-elems
+    (for/list ([epi (in-list epis)])
+      (make-multiarg-element "Topenepigraph" epi)))
+  (para #:style 'pretitle
+        (apply elem #:style "Tepigraphs"
+               (add-between epi-elems (elem #:style "vfill")))))
 
 (define (copyright-page . pcs)
   (apply elem  pcs #:style "Tcopyrightpage"))
