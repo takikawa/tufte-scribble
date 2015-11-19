@@ -18,12 +18,16 @@
          (rename-out [--#%module-begin #%module-begin])
 
          newthought
+         marginnote
          publisher
          epigraphs
          copyright-page)
 
 (define (newthought . pcs)
   (apply elem #:style "newthought" pcs))
+
+(define (marginnote . pcs)
+  (apply elem #:style "marginnote" pcs))
 
 (define (publisher . pcs)
   (para #:style 'pretitle
