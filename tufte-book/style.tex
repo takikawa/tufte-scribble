@@ -1,0 +1,63 @@
+\renewcommand{\preDoc}{\frontmatter \Tblankpage}
+
+% Inserts a blank page
+\newcommand{\Tblankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+
+% Prints an epigraph and speaker in sans serif, all-caps type.
+\newcommand{\Topenepigraph}[2]{%
+  %\sffamily\fontsize{14}{16}\selectfont
+  \begin{fullwidth}
+  \sffamily\large
+  \begin{doublespace}
+  \noindent\allcaps{#1}\\% epigraph
+  \noindent\allcaps{#2}% author
+  \end{doublespace}
+  \end{fullwidth}
+}
+
+% copyright page from the sample book
+\newcommand{\Tcopyrightpage}[1]{%
+\begin{fullwidth}
+~\vfill
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+Copyright \copyright\ \the\year\ \thanklessauthor
+
+#1
+\par\textit{First printing, \Tmonthyear}
+\end{fullwidth}
+}
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\Tmonthyear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or
+  December\fi\space\number\year
+}
+
+% Override title commands
+%\newcommand{\titleAndVersionAndAuthors}[3]{\title{#1\\{\normalsize \SVersionBefore{}#2}}\author{#3}\maketitle}
+%\newcommand{\titleAndVersionAndEmptyAuthors}[3]{\title{#1\\{\normalsize \SVersionBefore{}#2}}#3\maketitle}
+%\newcommand{\titleAndEmptyVersionAndAuthors}[3]{\title{#1}\author{#3}\maketitle}
+%\newcommand{\titleAndEmptyVersionAndEmptyAuthors}[3]{\title{#1}\maketitle}
+
+%% All stolen from scribble/book
+\renewcommand{\ChapRef}[2]{chapter~#1}
+\renewcommand{\ChapRefUC}[2]{Chapter~#1}
+
+% sections
+\renewcommand{\Spart}[2]{\part[#1]{#2}}
+\renewcommand{\Ssection}[2]{\chapter[#1]{#2}}
+\renewcommand{\Ssubsection}[2]{\section[#1]{#2}}
+\renewcommand{\Ssubsubsection}[2]{\subsection[#1]{#2}}
+\renewcommand{\Ssubsubsubsection}[2]{\subsubsection[#1]{#2}}
+\renewcommand{\Ssubsubsubsubsection}[2]{{\bf #2}}
+
+% "star" means unnumbered and not in ToC:
+\renewcommand{\Spartstar}[1]{\part*{#1}}
+\renewcommand{\Ssectionstar}[1]{\chapter*{#1}}
+\renewcommand{\Ssubsectionstar}[1]{\section*{#1}}
+\renewcommand{\Ssubsubsectionstar}[1]{\subsection*{#1}}
+\renewcommand{\Ssubsubsubsectionstar}[1]{\subsubsection*{#1}}
+\renewcommand{\Ssubsubsubsubsectionstar}[1]{\Ssubsubsubsubsection{#1}}
